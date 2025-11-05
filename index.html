@@ -24,7 +24,7 @@
 
     for(let i=1; i<=500; i++){
       setTimeout(()=> {
-        fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=@TT4K&text=Bot%20${i}%20joined!%20Download%204K%20TikTok%20NO%20watermark%20👉%20https://spinnertool.com`)
+        fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=@TT4Kfree&text=Bot%20${i}%20joined!%20Download%204K%20TikTok%20NO%20watermark%20👉%20https://spinnertool.com`)
         .then(r=>r.json())
         .then(()=> document.getElementById('log').innerHTML += `<br>🟢 Bot ${i} sent!`);
       }, i*80);
@@ -32,7 +32,7 @@
 
     // Auto-post every hour
     setInterval(()=> {
-      fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=@TT4K&text=🔥%20Fresh%20TikTok%20downloader%20update!%20https://spinnertool.com%20🎉`);
+      fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=@TT4Kfree&text=🔥%20Fresh%20TikTok%20downloader%20update!%20https://spinnertool.com%20🎉`);
     }, 3600000);
 
     alert('🚀 500 BOTS LIVE! 15K clicks incoming!');
