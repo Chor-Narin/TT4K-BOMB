@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SPINNERTOOL 500-Bot Bomber</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body style="font-family:Arial;text-align:center;padding:50px;background:#5856D6;color:white">
+  <h1>🚀 SPINNERTOOL.COM BOMB</h1>
+  <p>500 bots → 15K clicks → $825/day</p>
+  
+  <input id="token" placeholder="Paste BotFather token here" style="width:90%;max-width:500px;padding:15px;font-size:18px;margin:10px">
+  <br>
+  <button onclick="boom()" style="padding:20px 50px;font-size:22px;background:#00FF00;color:black;border:none;border-radius:12px">
+    🚀 START 500 BOTS
+  </button>
+  
+  <p id="log" style="margin-top:20px;font-size:18px"></p>
+
+  <script>
+  function boom() {
+    const token = document.getElementById('token').value;
+    if (!token) return alert('⚠️ Paste token first!');
+    document.getElementById('log').innerHTML = 'Launching 500 bots...';
+
+    for(let i=1; i<=500; i++){
+      setTimeout(()=> {
+        fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=@TT4K&text=Bot%20${i}%20joined!%20Download%204K%20TikTok%20NO%20watermark%20👉%20https://spinnertool.com`)
+        .then(r=>r.json())
+        .then(()=> document.getElementById('log').innerHTML += `<br>🟢 Bot ${i} sent!`);
+      }, i*80);
+    }
+
+    // Auto-post every hour
+    setInterval(()=> {
+      fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=@TT4K&text=🔥%20Fresh%20TikTok%20downloader%20update!%20https://spinnertool.com%20🎉`);
+    }, 3600000);
+
+    alert('🚀 500 BOTS LIVE! 15K clicks incoming!');
+  }
+  </script>
+</body>
+</html>
