@@ -27,7 +27,7 @@
         fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=@TT4Kfree&text=Bot%20${i}%20joined!%20Download%204K%20TikTok%20NO%20watermark%20👉%20https://spinnertool.com`)
         .then(r=>r.json())
         .then(()=> document.getElementById('log').innerHTML += `<br>🟢 Bot ${i} sent!`);
-      }, i*80);
+      }, i*2000);
     }
 
     // Auto-post every hour
