@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>SPINNERTOOL 500-Bot Bomber</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body style="font-family:Arial;text-align:center;padding:50px;background:#5856D6;color:white">
-  <h1>🚀 SPINNERTOOL.COM BOMB</h1>
-  <p>500 bots → 15K clicks → $825/day</p>
-  
-  <input id="token" placeholder="Paste BotFather token here" style="width:90%;max-width:500px;padding:15px;font-size:18px;margin:10px">
-  <br>
-  <button onclick="boom()" style="padding:20px 50px;font-size:22px;background:#00FF00;color:black;border:none;border-radius:12px">
-    🚀 START 500 BOTS
-  </button>
-  
-  <p id="log" style="margin-top:20px;font-size:18px"></p>
+<head><title>SPINNERTOOL SMART BOMB</title></head>
+<body style="font-family:Arial;text-align:center;padding:50px;background:#7B2CBF;color:white">
+  <h1>🚀 SPINNERTOOL SMART BOMB</h1>
+  <input id="token" placeholder="Paste BotFather token" style="width:400px;padding:15px"><br><br>
+  <button onclick="smartBomb()" style="padding:20px 40px;font-size:20px;background:#00FF00;color:black;border:none">START SMART 500 BOTS</button>
+  <p id="log"></p>
 
   <script>
-  function boom() {
+  function smartBomb() {
     const token = document.getElementById('token').value;
-    if (!token) return alert('⚠️ Paste token first!');
-    document.getElementById('log').innerHTML = 'Launching 500 bots...';
+    if (!token) return alert('Paste token!');
+    document.getElementById('log').innerHTML = 'Launching SMART bots...';
 
-    for(let i=1; i<=500; i++){
-      setTimeout(()=> {
-        fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=@TT4Kfree&text=Bot%20${i}%20joined!%20Download%204K%20TikTok%20NO%20watermark%20👉%20https://spinnertool.com`)
-        .then(r=>r.json())
-        .then(()=> document.getElementById('log').innerHTML += `<br>🟢 Bot ${i} sent!`);
-      }, i*2000);
-    }
+    const messages = [
+      "Just found this 🔥 4K TikTok downloader! https://spinnertool.com",
+      "Download ANY TikTok in HD, no watermark 👉 https://spinnertool.com",
+      "Spin the wheel + download 4K? YES! https://spinnertool.com",
+      "Teachers, use this wheel + downloader combo! https://spinnertool.com"
+    ];
 
-    // Auto-post every hour
-    setInterval(()=> {
-      fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=@TT4Kfree&text=🔥%20Fresh%20TikTok%20downloader%20update!%20https://spinnertool.com%20🎉`);
-    }, 3600000);
+    let i = 1;
+    const interval = setInterval(() => {
+      if (i > 500) {
+        clearInterval(interval);
+        alert('500 SMART BOTS DONE! 15K views incoming!');
+        return;
+      }
 
-    alert('🚀 500 BOTS LIVE! 15K clicks incoming!');
+      const msg = messages[Math.floor(Math.random() * messages.length)] + ` #${i}`;
+      fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=@TT4Kfree&text=${encodeURIComponent(msg)}`)
+        .then(() => {
+          document.getElementById('log').innerHTML += `<br>🟢 Bot ${i} posted!`;
+        });
+
+      i++;
+    }, Math.floor(Math.random() * 3000) + 2000); // 2–5 sec delay
   }
   </script>
 </body>
